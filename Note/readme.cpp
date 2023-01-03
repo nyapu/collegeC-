@@ -2,10 +2,12 @@
 // ? Conversion from basic to class type 
 // ? Conversion from class type to basic
 // ? Conversion from one class type to another class type
-// ! conversion from basic to class type
+
 #include<iostream>
 #include<conio.h>
 using namespace std;
+/*
+// ! conversion from basic to class type
 class complex{
     private:
     int feet;
@@ -30,3 +32,26 @@ getch();
     return 0;
 }
 //thankyou
+*/
+// ! Conversion of class type to basic type
+class complex{
+    private:
+    int feet;
+    int inch;
+    public:
+    complex(int x,int y){
+        feet=x;
+        inch=y;
+    }
+    operator float(){
+        float a=feet+inch/12.0;
+        return a;
+    }
+};
+int main(){
+    complex c1(7,2);
+    float x=(float)c1;
+    cout<<"x ="<<x;
+    getch();
+    return 0;
+}
